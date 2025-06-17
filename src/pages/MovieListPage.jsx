@@ -6,7 +6,7 @@ function MovieListPage() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3000/movie").then((res) => {
-      const response = res.data.results;
+      const response = res.data.movies;
       console.log(response);
       setMovies(response);
     });
@@ -30,7 +30,7 @@ function MovieListPage() {
 
             <NavLink
               to={`/MoviesDetailPage/${movie.id}`}
-              className="btn btn-primary  my-3 "
+              className="btn btn-primary w-30 my-3 "
             >
               Vedi Dettagli
             </NavLink>
