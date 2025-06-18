@@ -5,12 +5,26 @@ import axios from "axios";
 function MovieDetailPage() {
   const { id: movieId } = useParams();
   const [movie, setMovie] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/movie/${movieId}`).then((res) => {
-      setMovie(res.data.movie);
-    });
+    axios
+      .get(`http://localhost:3000/movie/${movieId}`)
+      .then((res) => {
+        setMovie(res.data.movie);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Errore durante il recupero del film:", err);
+        setError("Film non trovato.");
+        setLoading(false);
+      });
   }, [movieId]);
+
+  if (loading) return <p>Caricamento in corso...</p>;
+  if (error) return <p>{error}</p>;
+  if (!post) return <p>Post non trovato.</p>;
 
   return (
     <div className="container my-5">
