@@ -24,7 +24,7 @@ function MovieDetailPage() {
 
   if (loading) return <p>Caricamento in corso...</p>;
   if (error) return <p>{error}</p>;
-  if (!post) return <p>Post non trovato.</p>;
+  if (!movie) return <p>Film non trovato.</p>;
 
   return (
     <div className="container my-5">
