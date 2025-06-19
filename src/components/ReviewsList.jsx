@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import RatingStars from "./RatingStars";
 
 function ReviewsList() {
   const [reviews, setReviews] = useState();
@@ -20,7 +21,7 @@ function ReviewsList() {
           {reviews.map((review) => (
             <li key={review.id}>
               <strong className="fs-3 text-danger">{review.name}</strong>
-              {""} <strong className="text-white">{review.vote}/5</strong>:{" "}
+              {""} <RatingStars vote={review.vote} />{" "}
               <div className="text-white">{review.text}</div>
             </li>
           ))}
