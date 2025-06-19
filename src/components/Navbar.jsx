@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-danger w-100">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
             Movies_db
