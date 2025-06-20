@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ReviewsList from "../components/ReviewsList";
+import FormReviews from "../components/FormReviews";
 
 function MovieDetailPage() {
   const { id: movieId } = useParams();
@@ -49,6 +50,7 @@ function MovieDetailPage() {
         <strong className="text-danger">Description:</strong> {movie.abstract}
       </p>
       <ReviewsList />
+      <FormReviews />
     </div>
   );
 }

@@ -27,7 +27,7 @@ function ReviewsList() {
           ))}
         </ul>
       ) : (
-        <p className="fsn-italic text-white">Nessuna recensione disponibile.</p>
+        <p className="fst-italic text-white">Nessuna recensione disponibile.</p>
       )}
     </>
   );
